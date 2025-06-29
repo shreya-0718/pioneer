@@ -39,3 +39,12 @@ This project was a mix of “wow this is working!” and “why is nothing worki
 - **State machines and mode switching**: I didn’t want a million global variables, so I learned how to use enums and clean logic to manage modes. It made the code way easier to read and extend!
 - **Timing without delay()**: I had to learn how to use `millis()` to time animations without freezing everything else. It felt weird at first, but now I get why it’s so useful.
 
+## Images!
+Here is my schematic: 
+
+![pioneer schematic](images/schematic.png)
+
+And here's my PCB:
+
+![PCB front](images/pcb_front.png)
+![PCB back](images/pcb_back.png)
