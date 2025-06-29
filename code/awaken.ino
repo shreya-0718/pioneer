@@ -1,3 +1,4 @@
+// Awaken - 
 
 // Define pin numbers according to your board's layout
 #define D0 0
@@ -9,11 +10,13 @@
 #define D9 9
 #define D10 10
 
+// Define button pins
 int BUT1 = D0;
 int BUT2 = D1;
 int BUT3 = D2;
 int BUT4 = D3;
 
+// Define LED pins
 int LED1 = D10;
 int LED2 = D9;
 int LED3 = D8;
@@ -28,7 +31,7 @@ enum Mode {
   };
 
 Mode currentMode = OFF;
-bool orbitDir = true; // true is clockwise 123, false is counter 321
+bool orbitDir = true; // true is clockwise 123, false is counterclockwise: 321
 
 void setup() {
   pinMode(BUT1, INPUT);
@@ -44,7 +47,7 @@ void setup() {
   long startTime = millis();
 }
 
-void loop() {
+void loop() { 
   // put your main code here, to run repeatedly:
   readButtons();
 
