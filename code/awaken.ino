@@ -1,6 +1,8 @@
-// Awaken - 
+// #include <Arduino.h>
 
-// Define pin numbers according to your board's layout
+// Awaken - first script for Pioneer
+
+// Temporary defining pin numbers:
 #define D0 0
 #define D1 1
 #define D2 2
@@ -22,19 +24,28 @@ int LED2 = D9;
 int LED3 = D8;
 int LED4 = D7;
 
+// Initialize functions
+void footMode();
+void compassMode(bool orbitDir);
+void trainMode();
+void rocketMode();
+void readButtons();
+void turnOffAll();
+void pulseSun();
+
 enum Mode {
     OFF,
     FOOT,
     COMPASS,
     TRAIN,
     ROCKET
-  };
+};
 
 Mode currentMode = OFF;
 bool orbitDir = true; // true is clockwise 123, false is counterclockwise: 321
 
-void setup() {
-  pinMode(BUT1, INPUT);
+void setup() { 
+  pinMode(BUT1, INPUT); // it'll give errors but on vsc that's alr :)
   pinMode(BUT2, INPUT);
   pinMode(BUT3, INPUT);
   pinMode(BUT4, INPUT);
@@ -48,7 +59,7 @@ void setup() {
 }
 
 void loop() { 
-  // put your main code here, to run repeatedly:
+  // main code to run repeatedly:
   readButtons();
 
   switch(currentMode) {
@@ -71,6 +82,13 @@ void loop() {
   }
 }
 
+void turnOffAll() {
+  digitalWrite(LED1, LOW);
+  digitalWrite(LED2, LOW);
+  digitalWrite(LED3, LOW);
+  digitalWrite(LED4, LOW);
+}
+
 int brightness = 0;
 int fadeAmount = 5;
 
@@ -90,11 +108,11 @@ void readButtons() {
 
   if (now - lastDebounceTime < debounceDelay) return;
 
-  if (digitalRead(BUT2) == HIGH) { // Foot (Button2)
+  if (digitalRead(BUT2) == HIGH) { // Foot
     currentMode = (currentMode == FOOT) ? OFF : FOOT;
     lastDebounceTime = now;
   }
-  else if (digitalRead(BUT3) == HIGH) { // Compass (Button3)
+  else if (digitalRead(BUT3) == HIGH) { // Compass
     if (currentMode == COMPASS) {
       orbitDir = !orbitDir;
     } else {
@@ -102,14 +120,14 @@ void readButtons() {
     }
     lastDebounceTime = now;
   }
-  else if (digitalRead(BUT4) == HIGH) { // Train (Button4)
+  else if (digitalRead(BUT4) == HIGH) { // Train 
     currentMode = TRAIN;
     lastDebounceTime = now;
   }
-  else if (digitalRead(BUT1) == HIGH) { // Rocket (Button1)
+  else if (digitalRead(BUT1) == HIGH) { // Rocket
     currentMode = ROCKET;
     lastDebounceTime = now;
-  }
+  }  
 }
 
 void footMode() {

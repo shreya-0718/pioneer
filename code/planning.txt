@@ -1,0 +1,13 @@
+Four buttons, four LEDs. What can we make?
+I'll paint a symbol on each of the keys; a footprint, a compass, a train, and 
+a rocket, representing eras of human exploration
+
+The first script, which I wrote mostly before I started tracking time w Hackatime, 
+allows...
+- 🦶 Foot: turns on the sun (LED1) with a soft pulse. Press again to turn it off. 
+- 🧭 Compass: Starts a slow orbit animation around the sun. Press again to reverse direction! 
+- 🚂 Train: LEDs blink in rhythm—either to a steady beat or synced to music via USB. 
+-  🚀 Rocket: Launch sequence: LEDs light up in order, then all flash and stay on. 
+
+Named "Awaken" because its the first code I wrote for this board... and each button
+becomes a portal to a different era!
