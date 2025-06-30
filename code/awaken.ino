@@ -13,13 +13,13 @@
 #define D10 10
 
 // Define button pins
-int BUT1 = D0;
-int BUT2 = D1;
-int BUT3 = D2;
-int BUT4 = D3;
+int ROCKET_BUTTON = D0; // rocket
+int FOOT_BUTTON = D1; // foot
+int COMPASS_BUTTON = D2; // compass
+int TRAIN_BUTTON = D3; // train
 
 // Define LED pins
-int LED1 = D10;
+int LED1 = D10; // sun
 int LED2 = D9;
 int LED3 = D8;
 int LED4 = D7;
@@ -45,10 +45,10 @@ Mode currentMode = OFF;
 bool orbitDir = true; // true is clockwise 123, false is counterclockwise: 321
 
 void setup() { 
-  pinMode(BUT1, INPUT); // it'll give errors but on vsc that's alr :)
-  pinMode(BUT2, INPUT);
-  pinMode(BUT3, INPUT);
-  pinMode(BUT4, INPUT);
+  pinMode(ROCKET_BUTTON, INPUT); // it'll give errors but on vsc that's alr :)
+  pinMode(FOOT_BUTTON, INPUT);
+  pinMode(COMPASS_BUTTON, INPUT);
+  pinMode(TRAIN_BUTTON, INPUT);
 
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
@@ -108,11 +108,12 @@ void readButtons() {
 
   if (now - lastDebounceTime < debounceDelay) return;
 
-  if (digitalRead(BUT2) == HIGH) { // Foot
+  if (digitalRead(FOOT_BUTTON) == HIGH) { // Foot
     currentMode = (currentMode == FOOT) ? OFF : FOOT;
     lastDebounceTime = now;
   }
-  else if (digitalRead(BUT3) == HIGH) { // Compass
+  
+  if (digitalRead(COMPASS_BUTTON) == HIGH) { // Compass
     if (currentMode == COMPASS) {
       orbitDir = !orbitDir;
     } else {
@@ -120,11 +121,13 @@ void readButtons() {
     }
     lastDebounceTime = now;
   }
-  else if (digitalRead(BUT4) == HIGH) { // Train 
+  
+  if (digitalRead(TRAIN_BUTTON) == HIGH) { // Train 
     currentMode = TRAIN;
     lastDebounceTime = now;
   }
-  else if (digitalRead(BUT1) == HIGH) { // Rocket
+  
+  if (digitalRead(ROCKET_BUTTON) == HIGH) { // Rocket
     currentMode = ROCKET;
     lastDebounceTime = now;
   }  

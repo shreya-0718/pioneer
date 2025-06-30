@@ -2,6 +2,7 @@ Four buttons, four LEDs. What can we make?
 I'll paint a symbol on each of the keys; a footprint, a compass, a train, and 
 a rocket, representing eras of human exploration
 
+# Awaken
 The first script, which I wrote mostly before I started tracking time w Hackatime, 
 allows...
 - 🦶 Foot: turns on the sun (LED1) with a soft pulse. Press again to turn it off. 
@@ -11,3 +12,10 @@ allows...
 
 Named "Awaken" because its the first code I wrote for this board... and each button
 becomes a portal to a different era!
+
+# Signal
+This one allows for a person to type out MORSE CODE!
+- 🦶 Foot: adds a dot to the message
+- 🧭 Compass: adds a dash to the message
+- 🚂 Train: pressed once, is an inter-letter space. pressed twice is an inter-word space
+-  🚀 Rocket: sends the message!
