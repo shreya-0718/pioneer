@@ -27,6 +27,7 @@ int LED4 = D7;
 String morse = "";
 bool trainSpace = false; 
 // to check if the last button pressed was trainSpace or not
+long startTime = 0;
 
 void setup() { 
     pinMode(SEND, INPUT);
@@ -39,7 +40,7 @@ void setup() {
     pinMode(LED3, OUTPUT);
     pinMode(LED4, OUTPUT);
 
-    long startTime = millis();
+    startTime = millis();
 
     digitalWrite(LED1, LOW);
     digitalWrite(LED2, LOW);
@@ -78,7 +79,7 @@ void loop() {
 
         trainSpace = false;
 
-        delay(1000);
+        delay(700);
     }
 }
 
@@ -103,9 +104,32 @@ void sendMorse(String code) {
 }
 
 void blinkDot() {
-
+    digitalWrite(LED1, HIGH);
+    delay(600);
+    digitalWrite(LED1, LOW);
 }
 
 void blinkDash() {
+    digitalWrite(LED1, HIGH);
+    delay(600);
+    digitalWrite(LED1, LOW);
+}
 
+void flashAll(int times) {
+    for (int i = 0; i < times; i++)
+    {
+        digitalWrite(LED1, HIGH);
+        digitalWrite(LED2, HIGH);
+        digitalWrite(LED3, HIGH);
+        digitalWrite(LED4, HIGH);
+
+        delay(300);
+
+        digitalWrite(LED1, LOW);
+        digitalWrite(LED2, LOW);
+        digitalWrite(LED3, LOW);
+        digitalWrite(LED4, LOW);
+        
+        delay(300);
+    }
 }

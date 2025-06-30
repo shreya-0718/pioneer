@@ -43,6 +43,7 @@ enum Mode {
 
 Mode currentMode = OFF;
 bool orbitDir = true; // true is clockwise 123, false is counterclockwise: 321
+long startTime = 0; // initialize! had forgotten before
 
 void setup() { 
   pinMode(ROCKET_BUTTON, INPUT); // it'll give errors but on vsc that's alr :)
@@ -55,7 +56,7 @@ void setup() {
   pinMode(LED3, OUTPUT);
   pinMode(LED4, OUTPUT);
 
-  long startTime = millis();
+  startTime = millis();
 }
 
 void loop() { 

@@ -19,3 +19,14 @@ This one allows for a person to type out MORSE CODE!
 - 🧭 Compass: adds a dash to the message
 - 🚂 Train: pressed once, is an inter-letter space. pressed twice is an inter-word space
 -  🚀 Rocket: sends the message!
+
+# Orbit
+This allows you to set a study timer on the Pioneer!
+- 🦶 Foot: adds 5 minutes per press. wraps at 60 mins. LEDs light up at:
+    - 5 to 14 min -> LED1
+    - 15 to 29 min -> LED1 + LED2
+    - 30 to 44 min -> LED1 + LED2 + LED3
+    - 45 to 60 min -> all LEDs
+- 🧭 Compass: pauses or unpauses the timer. when paused, all the LEDs flash slowly.
+- 🚂 Train: flashes all LEDs 3 times, then resets everything. time = 0, LEDs off.
+-  🚀 Rocket: starts the timer! before starting, all currently lit LEDs flash twice. then they stay on, and countdown starts.
