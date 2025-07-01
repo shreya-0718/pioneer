@@ -1,6 +1,6 @@
 // #include <Arduino.h>
 
-// Signal - a morse code flasher :)
+// Orbit - a timer!
 
 // Temporary defining pin numbers:
 #define D0 0
@@ -173,7 +173,7 @@ void pulseActiveLEDs() { // fade in and out :)
 
 void setActiveLEDsAnalog(int brightness) {
   if (time >= thres1) analogWrite(LED1, brightness);
-  if (time >= thres2) analogWrite(LED2, brightness);
+  if (time >= thres2) analogWrite(LED2, brightness); 
   if (time >= thres3) analogWrite(LED3, brightness);
   if (time >= thres4) analogWrite(LED4, brightness);
 }

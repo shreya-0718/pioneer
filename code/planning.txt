@@ -30,3 +30,18 @@ This allows you to set a study timer on the Pioneer!
 - 🧭 Compass: pauses or unpauses the timer. when paused, all the LEDs flash slowly.
 - 🚂 Train: flashes all LEDs 3 times, then resets everything. time = 0, LEDs off.
 -  🚀 Rocket: starts the timer! before starting, all currently lit LEDs flash twice. then they stay on, and countdown starts.
+
+# Moonlight
+This is a nice little nightlight mode for this board, a perfect way to round it out!
+There are four modes:
+- 🌫️ Mist — unified breathing
+- 🌊 Tide — layered wave in and out
+- ✨ Firefly — independent LED rhythms
+- 🌙 Moonlit — triggered by TRAIN, one LED pulses softly and shifts on press
+
+Here are what the buttons do:
+- 🦶 Foot: cycles the brightness between off -> low -> medium -> high
+- 🧭 Compass: pauses or unpauses the animation. when paused, the animation is just still at that mode.
+- 🚂 Train: starts Moonlit mode. 
+-  🚀 Rocket: cycles modes between mist, tide, and firefly
+
