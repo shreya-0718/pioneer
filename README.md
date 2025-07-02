@@ -10,7 +10,7 @@ I heard the word Pathfinder and my thoughts jumped to an explorer trying to find
 
 And then of course the empty space was kind of sad, so I thought, why not add stars and planets? The final design has three LEDs as planets, one as the sun, and a couple constellations and a LOT of stars. 💖✨
 
-My final goal for making this project was to learn get more experience with PCBs on Kicad and microcontrollers! 
+My final goal for making this project was to learn get more experience with PCBs on Kicad and microcontrollers! And there are multiple scripts you can run on this board, which I will explain below.
 
 ## Functions ⚙️
 So, as it turns out... this board doesn't just have one script you can run on it. It has four! Here are the four scripts you can run!
@@ -83,7 +83,7 @@ This project was a mix of “wow this is working!” and “why is nothing worki
 - **State machines and mode switching**: I didn’t want a million global variables, so I learned how to use enums and clean logic to manage modes. It made the code way easier to read and extend!
 - **Timing without delay()**: I had to learn how to use `millis()` to time animations without freezing everything else.
 
-## Images!
+## Images! 📸
 Here is my schematic: 
 
 ![pioneer schematic](images/schematic.png)
