@@ -88,7 +88,11 @@ Here is my schematic:
 
 ![pioneer schematic](images/schematic.png)
 
-And here's my PCB:
+And here's my PCB editor (aka pure chaos):
+
+![a very chaotic editor](images/pcb_editor.png)
+
+And here is the final look!:
 
 ![PCB front](images/pcb_front.png)
 ![PCB back](images/pcb_back.png)
