@@ -72,7 +72,6 @@ Here's what each of the buttons do:
 - Seeed Studio XIAO RP2040
 - 4 tactile switches
 - 4 LEDs
-- A lot of trial and error
 
 I used KiCad for the PCB, and VSCode with Arduino for the firmware part of it.
 
