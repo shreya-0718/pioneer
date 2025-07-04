@@ -71,7 +71,7 @@ Here's what each of the buttons do:
 
 - XIAO RP2040 Microcontroller
 - 4 Cherry MX Buttons + Switches
-- 4 LEDs
+- 4 LEDs (random colors)
 
 I used KiCad for the PCB, and VSCode with Arduino for the firmware part of it.
 
@@ -91,3 +91,5 @@ And here is the final look!:
 
 ![PCB front](images/pcb_front.png)
 ![PCB back](images/pcb_back.png)
+
+I'll add more pictures once I get the board + keys and put this thing together!
