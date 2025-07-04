@@ -1,4 +1,6 @@
-# Pioneer: a space-themed fidget board! 🚀
+# Pioneer 🪐
+
+a PCB fidget toy!
 
 First of all, thank you Meghana for the awesome YSWS https://pathfinder.hackclub.com/! We stan Meghana <3
 
