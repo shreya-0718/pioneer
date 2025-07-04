@@ -54,9 +54,9 @@ What are the time intervals? Here’s how the LEDs light up:
 This script creates a calming moonlight effect that can be used for meditation or as a nightlight! 
 There are four modes:
 - 🌫️ Mist — unified breathing; the LEDs pulse
-- 🌊 Tide — all the LEDs turn on, then all go off, one by one.
+- 🌊 Tide — all the LEDs turn on, then all go off, one by one
 - ✨ Firefly — independent LED rhythms
-- 🌙 Moonlit — triggered by TRAIN, one LED pulses softly and shifts on press
+- 🌙 Moonlit — triggered by the Train button. one LED pulses softly and shifts on press
 
 Here's what each of the buttons do:
 
@@ -65,12 +65,12 @@ Here's what each of the buttons do:
 | 👣 Foot   | cycles the brightness between off -> low -> medium -> high  |
 | 🧭 Compass | pauses or unpauses the animation of the lights (whereever they are in the cycle)|
 | 🚂 Train  | starts/controls Moonlit mode |
-| 🚀 Rocket | cycles modes between mist, tide, and firefly |
+| 🚀 Rocket | cycles modes between Mist, Tide, and Firefly |
 
 ## Built With 🛠️
 
-- Seeed Studio XIAO RP2040
-- 4 tactile switches
+- XIAO RP2040 Microcontroller
+- 4 Cherry MX Buttons + Switches
 - 4 LEDs
 
 I used KiCad for the PCB, and VSCode with Arduino for the firmware part of it.
