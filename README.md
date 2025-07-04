@@ -6,33 +6,32 @@ This is a board I made for the Pathfinder YSWS by Hack Club. And now for a mini 
 about the name and why I chose it:
 
 ## Inspiration ✨
-I heard the word Pathfinder and my thoughts jumped to an explorer trying to find their way in an unknown world. Then, of course, I went to brainstorming name ideas, and Pioneer stuck. I thought about the different "eras" of exploration, and came up with four symbols (which I will paint on the four buttons): a foot 👣, a compass 🧭, a train 🚂, and a rocket 🚀. Each era, when activated, makes the LEDs do something new.
+The word Pathfinder inspired the word Pioneer, and since I knew I wanted four buttons (and of course four LEDs), I used each of the buttons to represent the different "eras" of exploration. Here were the four symbols I came up with (which I will paint on the four buttons): a foot 👣 (whenever I say foot y'all I mean the footprint, not an actual foot 😭 I realized that a little late so I added emojis in here for visualization), a compass 🧭, a train 🚂, and a rocket 🚀. Each era, when activated, makes the LEDs do something new depending on what script you are in.
 
-And then of course the empty space was kind of sad, so I thought, why not add stars and planets? The final design has three LEDs as planets, one as the sun, and a couple constellations and a LOT of stars. 💖✨
+And then of course the empty space was kind of sad, so I thought, why not add stars and planets? The final design has three LEDs as planets, one as the sun (so 4 LEDs total), a couple constellations silkscreened onto it, and a LOT of stars. Plus, of course, the four buttons. The rocket one couldn't fit in a neat little row with the other three, so it's hovering above the XIAO microcontroller. Which I convinced myself was fitting because it looks like it's launching into space. 
 
-My final goal for making this project was to learn get more experience with PCBs on Kicad and microcontrollers! And there are multiple scripts you can run on this board, which I will explain below.
+My final goal for making this project was to learn get more experience with PCBs on Kicad and microcontrollers (especially before I dived into HackPad and potentially more complicated hardware projects in the future)! And there are multiple scripts you can run on this board, which I will explain below.
 
-## Functions ⚙️
-So, as it turns out... this board doesn't just have one script you can run on it. It has four! Here are the four scripts you can run!
+So, as it turns out... this board doesn't just have one script you can run on it. Or two, or three. It has four! Here are the four scripts you can run, and what the four buttons do in each of them:
 
 ### Awaken 🌞
-This is the first script I wrote for this board. It's a nice little animation script, where the LEDs seem to dance. Since it was the first script, it was like the "awakening" of the board, hence the name. Here are what each of the buttons do in this:
+This is the first script I wrote for this board. It's a nice little animation script, where the LEDs seem to dance. Since it was the first script, it was like the "awakening" of the board, hence the name (the other name idea I had was "Bling" since it makes the LEDs go blingy blingy and look pretty). Here are what each of the buttons do in this script:
 
 | Button     | Description |
 |----------|-------------|
-| 👣 Foot   | Turns on the sun (LED1) with a soft pulse. Press again to turn it off. |
-| 🧭 Compass | Starts a slow orbit animation around the sun. Press again to reverse direction! |
-| 🚂 Train  | LEDs blink in rhythm—either to a steady beat or synced to music via USB. |
-| 🚀 Rocket | Launch sequence: LEDs light up in order, then all flash and stay on. |
+| 👣 Foot   | Turns on the sun (LED4) with a soft pulse. Press again to turn it off. |
+| 🧭 Compass | Starts a slow orbit animation of the three planet LEDs around the sun. Press again to reverse direction |
+| 🚂 Train  | LEDs blink in rhythm to a steady beat |
+| 🚀 Rocket | Like a little launch sequence: the four LEDs light up in order, then all flash flash and stay on. |
 
 ### Signal 📡
-This script is all about Morse code! It uses the buttons to send Morse code signals, and the LEDs blink to show the dots and dashes. Here’s how it works:
+This script is all about Morse code! Here’s how it works:
 | Button     | Description |
 |----------|-------------|
-| 👣 Foot   | adds a dot (short blink)|
-| 🧭 Compass | adds a dash (long blink) |
-| 🚂 Train  | pressed once, adds an inter-letter space. pressed twice adds an inter-word space |
-| 🚀 Rocket | sends the Morse code message! |
+| 👣 Foot   | adds a dot to the message (short blink)|
+| 🧭 Compass | adds a dash to the message (long blink) |
+| 🚂 Train  | pressed once, adds an inter-letter space (gap). pressed twice in a row adds an inter-word space (longer gap) |
+| 🚀 Rocket | sends the Morse code message, the LEDs start flashing |
 
 ### Orbit 🌌
 This script is a timer that can be used to count down from any number of minutes, in intervals of 5, from 5 to 60 minutes. Here is what the buttons do:
@@ -40,8 +39,8 @@ This script is a timer that can be used to count down from any number of minutes
 |----------|-------------|
 | 👣 Foot   | adds 5 minutes per press. wraps at 60 mins. The LEDs light up in intervals to kind of show how much time has been added|
 | 🧭 Compass | pauses or unpauses the timer. when paused, all the LEDs flash slowly. |
-| 🚂 Train  | flashes all LEDs 3 times, then resets everything. time = 0, LEDs off. |
-| 🚀 Rocket | starts the timer! before starting, all currently lit LEDs flash twice. then they stay on, and countdown starts. they turn off in accordance with the time interval|
+| 🚂 Train  | flashes all LEDs 3 times, then resets everything. time = 0, LEDs off|
+| 🚀 Rocket | starts the timer! before starting, all currently lit LEDs flash twice. then they stay on, and countdown starts|
 
 What are the time intervals? Here’s how the LEDs light up:
 - 5 to 19 min -> LED1
@@ -49,20 +48,20 @@ What are the time intervals? Here’s how the LEDs light up:
 - 35 to 49 min -> LED1 + LED2 + LED3
 - 50 to 60 min -> all 4 LEDs
 
-### Moonlight 🌜
+### Moonlight 🌚
 This script creates a calming moonlight effect that can be used for meditation or as a nightlight! 
 There are four modes:
-- 🌫️ Mist — unified breathing, the LEDs pulse
-- 🌊 Tide — like a layered wave, going in and out
+- 🌫️ Mist — unified breathing; the LEDs pulse
+- 🌊 Tide — all the LEDs turn on, then all go off, one by one.
 - ✨ Firefly — independent LED rhythms
 - 🌙 Moonlit — triggered by TRAIN, one LED pulses softly and shifts on press
 
-Here’s how the buttons work:
+Here's what each of the buttons do:
 
 | Button     | Description |
 |----------|-------------|
 | 👣 Foot   | cycles the brightness between off -> low -> medium -> high  |
-| 🧭 Compass | pauses or unpauses the animation |
+| 🧭 Compass | pauses or unpauses the animation of the lights (whereever they are in the cycle)|
 | 🚂 Train  | starts/controls Moonlit mode |
 | 🚀 Rocket | cycles modes between mist, tide, and firefly |
 
@@ -73,22 +72,17 @@ Here’s how the buttons work:
 - 4 LEDs
 - A lot of trial and error
 
-I used KiCad for the PCB and Arduino for the firmware part of it.
+I used KiCad for the PCB, and VSCode with Arduino for the firmware part of it.
 
-## Struggles and Learning 🌱
-
-This project was a mix of “wow this is working!” and “why is nothing working.” A few things I wrestled with:
-
-- **Pin naming confusion**: In the code, I used `D0`, `D1`, etc. at first, but the XIAO RP2040 doesn’t recognize those in code. Turns out you just use numbers like `0`, `1`, `2` instead. Simple fix, but it tripped me up for a while.
-- **State machines and mode switching**: I didn’t want a million global variables, so I learned how to use enums and clean logic to manage modes. It made the code way easier to read and extend!
-- **Timing without delay()**: I had to learn how to use `millis()` to time animations without freezing everything else.
+## Learning 🌱
+This wasn't my first time using KiCad, but it was my first time using the XIAO microcontroller. I also learned how to write firmware for it using Arduino. The hardest part was figuring out the logic for the scripts, considering I had so many moving parts and buttons to handle, and to make sure that clicking two buttons at the same time didn't make the LEDs go wild. Overall, I learned how to use the XIAO RP2040, and will use this knowledge to make the HackPad, and how to write firmware (although as I understand, HackPad code uses either kmk or qmk).
 
 ## Images! 📸
 Here is my schematic: 
 
 ![pioneer schematic](images/schematic.png)
 
-And here's my PCB editor (aka pure chaos):
+And here's my PCB editor:
 
 ![a very chaotic editor](images/pcb_editor.png)
 
